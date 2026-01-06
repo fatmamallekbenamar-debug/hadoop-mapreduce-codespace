@@ -1,0 +1,11 @@
+services:
+  hadoop:
+    image: harisekhon/hadoop:latest
+    container_name: hadoop
+    hostname: hadoop
+    tty: true
+    ports:
+      - "9870:9870"   # HDFS NameNode UI (si dispo)
+      - "8088:8088"   # YARN ResourceManager UI (si dispo)
+    # Certaines images ont besoin de privilèges pour system services, sinon ok en pseudo mode
+    privileged: true
